@@ -7,4 +7,4 @@ def home(request):
         city = request.GET["city"]
         weather = get_weather(city)
         context = {"city": city, "weather": weather}
-    return render(request, "weather/home.html", context)
+    return render(request, "home.html", context)
