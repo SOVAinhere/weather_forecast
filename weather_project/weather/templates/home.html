@@ -5,23 +5,22 @@
     <title>Прогноз погоды</title>
 </head>
 <body>
-    <h1>Прогноз погоды</h1>
-    <form method="get">
-        <input type="text" name="city" placeholder="Введите город" required>
-        <button type="submit">Узнать погоду</button>
-    </form>
+<h1>Прогноз погоды</h1>
+<form method="get">
+    <input type="text" name="city" placeholder="Введите город" required>
+    <button type="submit">Узнать погоду</button>
+</form>
 
-    {% if weather %}
-        <h2>Погода в {{ city }}</h2>
-        {% if weather.error %}
-            <p>{{ weather.error }}</p>
-        {% else %}
-            <ul>
-                <li>Температура: {{ weather.temperature }} °C</li>
-                <li>Скорость ветра: {{ weather.windspeed }} км/ч</li>
-                <li>Время: {{ weather.time }}</li>
-            </ul>
-        {% endif %}
+{% if weather %}
+    <h2>Погода в {{ city }}</h2>
+    {% if weather.error %}
+        <p>{{ weather.error }}</p>
+    {% else %}
+        <ul>
+            <li>Температура: {{ weather.temperature }} °C</li>
+            <li>Скорость ветра: {{ weather.windspeed }} км/ч</li>
+        </ul>
     {% endif %}
+{% endif %}
 </body>
 </html>
