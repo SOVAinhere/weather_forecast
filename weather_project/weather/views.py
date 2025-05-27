@@ -28,7 +28,4 @@ def home(request):
                 "windspeed": weather_response["current_weather"]["windspeed"]
             }
 
-            # сохраняем город в сессию для следующих шагов
-            request.session["last_city"] = name
-
-    return render(request, "weather.html", {"weather": weather_data})
+    return render(request, "weather.html", {"weather": weather_data, 'city': city})
