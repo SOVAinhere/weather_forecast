@@ -17,13 +17,13 @@
 ## 🚀 Установка и запуск
 
 
-git clone https://github.com/твоя-ссылка/weather_forecast.git
-cd weather_forecast
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-pip install -r requirements.txt
-python manage.py runserver
+git clone https://github.com/raoai-cchzika/weather_forecast.git  
+cd weather_forecast  
+python -m venv venv  
+source venv/bin/activate  # Linux/macOS  
+venv\Scripts\activate  # Windows  
+pip install -r requirements.txt  
+python manage.py runserver  
 
 # Используемые технологии
 
