@@ -1,13 +1,10 @@
 import requests
 from django.shortcuts import render
-
-
 def home(request):
     city = request.GET.get('city')
     weather_data = None
 
     if city:
-        # 1. Геокодинг: получаем координаты
         geo_url = f"https://geocoding-api.open-meteo.com/v1/search?name={city}&count=1&language=ru&format=json"
         geo_response = requests.get(geo_url).json()
 
@@ -16,7 +13,6 @@ def home(request):
             lon = geo_response["results"][0]["longitude"]
             name = geo_response["results"][0]["name"]
 
-            # 2. Погода
             weather_url = (
                 f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}"
                 f"&current_weather=true"
@@ -27,5 +23,10 @@ def home(request):
                 "temperature": weather_response["current_weather"]["temperature"],
                 "windspeed": weather_response["current_weather"]["windspeed"]
             }
+        else:
+            weather_data = {
+                "error": "Город не найден"
+            }
 
     return render(request, "weather.html", {"weather": weather_data, 'city': city})
+
