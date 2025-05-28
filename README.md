@@ -4,8 +4,7 @@
 
 ## 📸 Скриншот
 
-![Пример интерфейса](![изображение](https://github.com/user-attachments/assets/c60737ab-2588-4a1c-b296-67a4b4295036)
-) <!-- Добавь скриншот в корень проекта с таким именем -->
+![Пример интерфейса](screenshot.jpg)
 
 ## ⚙️ Возможности
 
@@ -16,8 +15,32 @@
 
 ## 🚀 Установка и запуск
 
-1. **Клонируй репозиторий**
 
-```bash
 git clone https://github.com/твоя-ссылка/weather_forecast.git
 cd weather_forecast
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+pip install -r requirements.txt
+python manage.py runserver
+
+# Используемые технологии
+
+Django
+
+HTML / Bootstrap 5
+
+JavaScript (fetch API)
+
+Open-Meteo API:
+
+Geocoding API
+
+Forecast API
+
+# 📌 Примечания
+
+Приложение не требует ключа API.
+
+Подсказки работают через JavaScript — убедитесь, что JS включён в браузере.
+
